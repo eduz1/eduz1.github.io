@@ -1,0 +1,110 @@
+baseURL = 'https://edurdz.me'
+title = 'EduardoRdz'
+theme = 'hugo-blog-awesome'
+enableEmoji = true
+defaultContentLanguage = 'es'
+defaultContentLanguageInSubdir = false
+
+[params]
+  mainSections = ['posts']
+  goToTop = true
+  defaultColor = "dark" # set default color mode: dark or light 
+
+[params.author]
+  avatar = 'images/me.png'
+  intro = 'Eduz'
+  name = 'Eduz'
+
+[params.browserconfig]
+  TileColor = '#2d89ef'
+
+[[params.socialIcons]]
+  name = 'github'
+  url = 'https://github.com/eduz1'
+
+[[params.socialIcons]]
+  name = 'email'
+  url = 'mailto:edurdz.me'
+
+[[params.socialIcons]]
+  name = 'linkedin'
+  url = 'https://www.linkedin.com/in/edurdz30'
+
+[[params.socialIcons]]
+  name = 'discogs'
+  url = 'https://www.discogs.com/user/LemonTactics'
+
+[[params.socialIcons]]
+  name = 'Rss'
+  url = '/index.xml'
+
+[languages.es]
+  languageName = 'Español'
+  languageCode = 'es-mx'
+  contentDir = 'content/es'
+  weight = 1
+
+  [languages.es.params.author]
+    description = 'Lo que pienso, escucho, veo y algunos otros proyectos.'
+
+  [languages.es.menu]
+    [[languages.es.menu.main]]
+      name = 'Inicio'
+      pageRef = '/'
+      weight = 10
+
+    [[languages.es.menu.main]]
+      name = 'Publicaciones'
+      pageRef = '/posts'
+      weight = 20
+
+    [[languages.es.menu.main]]
+      name = 'Sobre mí'
+      pageRef = '/about'
+      weight = 30
+
+    [[languages.es.menu.main]]
+      name = 'Mi música'
+      pageRef = '/my-music'
+      weight = 40
+
+    [[languages.es.menu.main]]
+      name = 'Cosas interesantes'
+      pageRef = '/interesting-stuff'
+      weight = 50
+
+[languages.en]
+  languageName = 'English'
+  languageCode = 'en-us'
+  contentDir = 'content/en'
+  weight = 2
+
+  [languages.en.params.author]
+    description = 'What I think about, hear, see and some other projects.'
+
+  [languages.en.menu]
+    [[languages.en.menu.main]]
+      name = 'Home'
+      pageRef = '/'
+      weight = 10
+
+    [[languages.en.menu.main]]
+      name = 'Posts'
+      pageRef = '/posts'
+      weight = 20
+
+    [[languages.en.menu.main]]
+      name = 'About Me'
+      pageRef = '/about'
+      weight = 30
+
+    [[languages.en.menu.main]]
+      name = 'My Music'
+      pageRef = '/my-music'
+      weight = 40
+
+    [[languages.en.menu.main]]
+      name = 'Interesting Stuff'
+      pageRef = '/interesting-stuff'
+      weight = 50
+

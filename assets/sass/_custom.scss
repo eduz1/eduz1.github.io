@@ -1,0 +1,34 @@
+// Home page author section
+.author {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+// Home Recent posts section
+main[aria-label="Content"] > .page-content + .posts-item-note {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+// Home page footer
+.home-page .footer {
+  margin-top: -2rem;
+}
+
+// Page title
+.wrapper.post .header {
+  margin-top: 2rem;
+  margin-bottom: -1rem;
+}
+
+// Page footer
+body:not(.home-page) .footer {
+  margin-top: -2rem;
+  margin-bottom: 0rem;
+}
+
+// Posts list page header
+.wrapper.list-page .header {
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+}
