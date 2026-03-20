@@ -1,0 +1,45 @@
+{{ define "main" }}
+<div class="wrapper post comic-sans-gallery-page">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">{{ .Title }}</h1>
+            </header>
+            <div class="page-content">
+                {{ .Content }}
+
+                {{ $images := readDir "static/comic_sans" }}
+                {{ $captions := .Site.Data.comic_sans }}
+                {{ if gt (len $images) 0 }}
+                <div class="comic-sans-gallery">
+                    {{ range sort $images "Name" "desc" }}
+                        {{ if not .IsDir }}
+                            {{ $name := .Name }}
+                            {{ $lowerName := lower $name }}
+                            {{ $caption := index $captions $name }}
+                            {{ if or (hasSuffix $lowerName ".jpg") (hasSuffix $lowerName ".jpeg") (hasSuffix $lowerName ".png") (hasSuffix $lowerName ".gif") (hasSuffix $lowerName ".webp") (hasSuffix $lowerName ".svg") }}
+                            <figure class="comic-sans-gallery-item">
+                                <a href="{{ printf "/comic_sans/%s" $name | relURL }}">
+                                    <img src="{{ printf "/comic_sans/%s" $name | relURL }}" alt="{{ with $caption }}{{ .alt }}{{ else }}{{ $name }}{{ end }}" loading="lazy">
+                                </a>
+                                <figcaption>
+                                    {{ with $caption }}
+                                        <p class="comic-sans-gallery-description">{{ .description }}</p>
+                                        <p class="comic-sans-gallery-date">{{ .date }}</p>
+                                    {{ else }}
+                                        <p class="comic-sans-gallery-description">{{ $name }}</p>
+                                    {{ end }}
+                                </figcaption>
+                            </figure>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                </div>
+                {{ else }}
+                <p>No images were found in <code>static/comic_sans</code>.</p>
+                {{ end }}
+            </div>
+        </article>
+    </main>
+</div>
+{{ end }}

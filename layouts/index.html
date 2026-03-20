@@ -23,10 +23,13 @@
                 {{ . }}
             </div>
             {{ end }}
-            <h3 class="posts-item-note" aria-label="Recent Posts">{{ T "home.recent_posts" }}</h3>
+            {{ $showRecentPosts := .Site.Params.showRecentPosts | default true }}
+            {{ if $showRecentPosts }}
             {{/* Show last 5 posts in reverse date order */}}
             {{ $pagesToShow := where .Site.RegularPages "Type" "in" site.Params.mainSections }}
             {{ $posts := $pagesToShow.ByDate.Reverse }}
+            {{ if gt (len $posts) 0 }}
+            <h3 class="posts-item-note" aria-label="Recent Posts">{{ T "home.recent_posts" }}</h3>
             {{ range first 5 $posts }}
             {{ partial "postCard" . }}
             {{ end }}
@@ -36,6 +39,8 @@
                 <a href="{{ $firstSection.Permalink }}">{{ T "home.see_all_posts" }}</a>
                 {{ end }}
             </p>
+            {{ end }}
+            {{ end }}
             {{ end }}
         </main>
     </div>

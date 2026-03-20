@@ -32,3 +32,40 @@ body:not(.home-page) .footer {
   margin-top: 2rem;
   margin-bottom: 0rem;
 }
+
+.comic-sans-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.comic-sans-gallery-item {
+  margin: 0;
+}
+
+.comic-sans-gallery-item a {
+  display: block;
+}
+
+.comic-sans-gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.comic-sans-gallery-item figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.comic-sans-gallery-description,
+.comic-sans-gallery-date {
+  margin: 0;
+}
+
+.comic-sans-gallery-date {
+  margin-top: 0.35rem;
+}

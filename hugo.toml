@@ -5,6 +5,10 @@ enableEmoji = true
 defaultContentLanguage = 'es'
 defaultContentLanguageInSubdir = false
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [params]
   mainSections = ['posts']
   goToTop = true
@@ -44,6 +48,9 @@ defaultContentLanguageInSubdir = false
   contentDir = 'content/es'
   weight = 1
 
+  [languages.es.params]
+    showRecentPosts = true
+
   [languages.es.params.author]
     description = 'Lo que pienso, escucho, veo y algunos otros proyectos.'
 
@@ -79,6 +86,9 @@ defaultContentLanguageInSubdir = false
   contentDir = 'content/en'
   weight = 2
 
+  [languages.en.params]
+    showRecentPosts = false
+
   [languages.en.params.author]
     description = 'What I think about, hear, see and some other projects.'
 
@@ -89,22 +99,7 @@ defaultContentLanguageInSubdir = false
       weight = 10
 
     [[languages.en.menu.main]]
-      name = 'Posts'
-      pageRef = '/posts'
-      weight = 20
-
-    [[languages.en.menu.main]]
       name = 'About Me'
       pageRef = '/about'
       weight = 30
-
-    [[languages.en.menu.main]]
-      name = 'My Music'
-      pageRef = '/my-music'
-      weight = 40
-
-    [[languages.en.menu.main]]
-      name = 'Interesting Stuff'
-      pageRef = '/interesting-stuff'
-      weight = 50
 
