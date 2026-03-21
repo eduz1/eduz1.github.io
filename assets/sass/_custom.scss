@@ -23,7 +23,7 @@ main[aria-label="Content"] > .page-content + .posts-item-note {
 
 // Page footer
 body:not(.home-page) .footer {
-  margin-top: -2rem;
+  margin-top: 0rem;
   margin-bottom: 0rem;
 }
 
@@ -33,11 +33,31 @@ body:not(.home-page) .footer {
   margin-bottom: 0rem;
 }
 
+$comic-sans-stack: "Comic Sans MS", "Chalkboard SE", "Chalkboard", "Comic Neue", "Trebuchet MS", "Verdana", sans-serif;
+
+.comic-sans-gallery-page,
+.comic-sans-gallery-page :is(h1, h2, h3, h4, h5, h6, p, a, li, figcaption, span, time) {
+  font-family: $comic-sans-stack;
+}
+
 .comic-sans-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
+}
+
+.page-content a[href$="/interesting/comic-sans/"] {
+  font-family: $comic-sans-stack;
+}
+
+.wrapper.post .page-content {
+  line-height: 1.7;
+}
+
+.wrapper.post .page-content > p {
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
 }
 
 .comic-sans-gallery-item {
